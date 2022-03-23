@@ -36,11 +36,14 @@ jobs:
       - checkout
       - heroku/install
       - run:
-          name: Deploy to Heroku
-          command:
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a algorithm-library.git web
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a algorithm-library.git web
+          name: Login into Heroku Docker Repository
+          command: 
+            docker login --username=xyu0127@gmail.com --password=$HEROKU_API_KEY registry.heroku.com
+      - run:
+          name: Deploy Heroku Docker Container
+          command: 
+            heroku container:push web -a algorithm-library.git
+            heroku container:release web -a algorithm-library.git
     
 workflows:  
   build-test-and-deploy:    
