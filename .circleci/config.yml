@@ -27,7 +27,7 @@ jobs:
       - checkout
       - run:
           name: Differential testing
-          command: python3 
+          command: git status 
 
   deploy:
     executor:
@@ -49,11 +49,15 @@ workflows:
               only:
                 - main
       - test:
+          requires:
+          - build
           filters:            
             branches:
               only:
                 - main
       - deploy:
+          requires:
+          - test
           filters:            
             branches:
               only:
