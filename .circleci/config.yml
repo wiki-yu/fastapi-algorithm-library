@@ -33,11 +33,11 @@ jobs:
   deploy:
     executor: heroku/default
     parameters:
-    api-key:
+      api-key:
         default: HEROKU_API_KEY
         description: The name of the environment variable containing your Heroku API Key.
         type: env_var_name
-    app-name:
+      app-name:
         default: algorithm-library
         description: The name of your Heroku App. 
         type: string
