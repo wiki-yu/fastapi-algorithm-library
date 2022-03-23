@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs:  
+  python: circleci/python@1.0.0
   heroku: circleci/heroku@1.0.1
 
 jobs:  
@@ -37,9 +38,9 @@ jobs:
       - run:
           name: Deploy to Heroku
           command:
-            heroku container:login
-            heroku container:push web -a https://heroku:$HEROKU_API_KEY@git.heroku.com/algorithm-library.git
-            heroku container:release web -a https://heroku:$HEROKU_API_KEY@git.heroku.com/algorithm-library.git
+            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login
+            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a algorithm-library.git web
+            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a algorithm-library.git web
     
 workflows:  
   build-test-and-deploy:    
