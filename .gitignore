@@ -1,0 +1,29 @@
+.vscode
+.env
+__pycache__
+/env
+/yolov5 stuff
+/uploads
+/runs
+/results
+/test_videos
+app/libs/detection_tracking/yolov5/runs
+app/libs/yolov5 stuff
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.mkv
+# model_weights/deepsort/*.t7
+# model_weights/yolov5/*.pt
+# model_weights/c3d/*.hdf5
+model_weights/c3d/*.txt
+model_weights/densenet_xgboost/classes/*.txt
+*.h5
+*.joblib
+*.t7
+*.pt
+*.hdf5
+*.db
+*.pth
+*.weights

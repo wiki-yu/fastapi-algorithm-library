@@ -1,0 +1,48 @@
+fastapi[all]==0.68.0
+## Included with [all]:
+    # ujson - for faster JSON "parsing".
+    # email_validator - for email validation.
+    # requests - Required if you want to use the TestClient.
+    # aiofiles - Required if you want to use FileResponse or StaticFiles.
+    # jinja2 - Required if you want to use the default template configuration.
+    # python-multipart - Required if you want to support form "parsing", with request.form().
+    # itsdangerous - Required for SessionMiddleware support.
+    # pyyaml - Required for Starlette's SchemaGenerator support (you probably don't need it with FastAPI).
+    # graphene - Required for GraphQLApp support.
+    # ujson - Required if you want to use UJSONResponse.
+    # uvicorn - for the server that loads and serves your application.
+    # orjson - Required if you want to use ORJSONResponse.
+uvicorn[standard]==0.13.4
+sqlalchemy
+
+## CPU versions of PyTorch
+torch==1.9.0
+torchvision==0.10.0
+torchaudio==0.9.0
+matplotlib>=3.2.2
+numpy>=1.18.5
+opencv-contrib-python==4.5.3.56
+Pillow>=8.0.0
+PyYAML>=5.3.1
+scipy>=1.4.1
+tqdm>=4.41.0
+seaborn==0.11.2
+
+## DeepSORT -------------------------------------
+easydict==1.9
+
+#################################################
+# Action Localization
+#################################################
+
+## C3D ------------------------------------------
+imutils==0.5.4
+scikit-learn==1.0
+tensorflow==2.8.0 
+
+## Rolling Average ------------------------------
+
+## Densenet XGBoost -----------------------------
+xgboost==1.5.0
+
+

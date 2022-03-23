@@ -1,0 +1,120 @@
+label {
+  name: "Basketball"
+  label_id: 1
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "BasketballDunk"
+  label_id: 2
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "Biking"
+  label_id: 3
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "CliffDiving"
+  label_id: 4
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "CricketBowling"
+  label_id: 5
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "Diving"
+  label_id: 6
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "Fencing"
+  label_id: 7
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "FloorGymnastics"
+  label_id: 8
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "GolfSwing"
+  label_id: 9
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "HorseRiding"
+  label_id: 10
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "IceDancing"
+  label_id: 11
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "LongJump"
+  label_id: 12
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "PoleVault"
+  label_id: 13
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "RopeClimbing"
+  label_id: 14
+  label_type: PERSON_MOVEMENT
+}
+label {
+  name: "SalsaSpin"
+  label_id: 15
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "SkateBoarding"
+  label_id: 16
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "Skiing"
+  label_id: 17
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "Skijet"
+  label_id: 18
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "SoccerJuggling"
+  label_id: 19
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "Surfing"
+  label_id: 20
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "TennisSwing"
+  label_id: 21
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "TrampolineJumping"
+  label_id: 22
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "VolleyballSpiking"
+  label_id: 23
+  label_type: OBJECT_MANIPULATION
+}
+label {
+  name: "WalkingWithDog"
+  label_id: 24
+  label_type: OBJECT_MANIPULATION
+}
