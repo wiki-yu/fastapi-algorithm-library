@@ -42,8 +42,8 @@ jobs:
       - run:
           name: Deploy Heroku Docker Container
           command: 
-            heroku container:push web -a algorithm-library.git
-            heroku container:release web -a algorithm-library.git
+            heroku container:push web -a algorithm-library
+            heroku container:release web -a algorithm-library
     
 workflows:  
   build-test-and-deploy:    
