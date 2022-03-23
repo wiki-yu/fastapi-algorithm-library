@@ -1,0 +1,45 @@
+version: 2.1
+
+orbs:  
+  python: circleci/python@1.0.0
+
+jobs:  
+  build-and-test:    
+    executor:
+      name: python/default
+      tag: '3.7'
+    steps:
+      - checkout
+      - run:
+          name: Setup Virtual env
+          command:
+            python3 -m venv env           
+            .\env\Scripts\activate 
+      - run:
+          name: Install Dependencies
+          command: pip install -r requirements.txt
+      
+  deploy:
+    executor:
+      name: python/default
+      tag: '3.7'
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Heroku
+          command:
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/fastapi-heroku-cicd.git main
+    
+workflows:  
+  build-test-and-deploy:    
+    jobs:      
+      - build-and-test:
+          filters:            
+            branches:
+              only:
+                - main
+      - deploy:
+          filters:            
+            branches:
+              only:
+                - main
