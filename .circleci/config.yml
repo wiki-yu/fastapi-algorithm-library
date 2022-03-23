@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:  
-  python: circleci/python@1.0.0
   heroku: circleci/heroku@1.0.1
+  python: circleci/python@1.0.0
 
 jobs:  
   build:    
