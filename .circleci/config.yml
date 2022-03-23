@@ -32,13 +32,22 @@ jobs:
 
   deploy:
     executor: heroku/default
+    parameters:
+    api-key:
+        default: HEROKU_API_KEY
+        description: The name of the environment variable containing your Heroku API Key.
+        type: env_var_name
+    app-name:
+        default: algorithm-library
+        description: The name of your Heroku App. 
+        type: string
     steps:
       - checkout
       - heroku/install
       - run:
           name: Login into Heroku Docker Repository
           command: 
-            docker login --username=xyu0127@gmail.com --password=$HEROKU_API_KEY registry.heroku.com
+            heroku container:login
       - run:
           name: Deploy Heroku Docker Container
           command: 
