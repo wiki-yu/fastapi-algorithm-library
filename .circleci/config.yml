@@ -1,62 +1,107 @@
 version: 2.1
-
-orbs:  
-  heroku: circleci/heroku@1.0.1
-  python: circleci/python@1.0.0
-
-jobs:  
-  build:    
-    executor:
+orbs:
+  node: circleci/node@3.0.1
+  heroku: circleci/heroku@1.2.6
+  python: circleci/python@1.5.0
+  docker: circleci/docker@1.0.1
+  
+jobs:
+  build-and-test:
+    executor: 
       name: python/default
-      tag: '3.7'
+      tag: '3.8'
+    working_directory: ~/repo
     steps:
       - checkout
       - run:
-          name: Setup Virtual env
-          command:
-            python3 -m venv env           
-            .\env\Scripts\activate 
+          name: Setup virtual environment
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            pip install pytest
+            
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - "venv"
+      - setup_remote_docker:
+          version: 18.06.0-ce
       - run:
-          name: Install Dependencies
-          command: pip install -r requirements_cpu.txt
-
-  test:    
-    executor:
+          name: Build Docker image
+          command: |
+            docker build -t heroku-dockerize:circleci .
+            docker images
+  
+  build:
+    docker:
+      - image: circleci/python:3.8
+      
+    executor: 
       name: python/default
-      tag: '3.7'
+      tag: '3.8'
+    working_directory: ~/repo
     steps:
       - checkout
       - run:
-          name: Differential testing
-          command: git status 
-
+          name: Setup virtual environment
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            
+      - save_cache:
+          key: deps1-{{ checksum "requirements.txt" }}
+          paths:
+            - ./venv
+      - setup_remote_docker:
+          version: 18.06.0-ce
+      
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t heroku-dockerize:circleci .
+            docker images
+  test:
+      
+      docker:
+        - image: circleci/python:3.8
+      working_directory: ~/repo
+      steps: 
+        - checkout
+        - restore_cache:
+           key: deps1-{{ checksum "requirements.txt" }}
+        - run:
+           name: Activating environment and pytest
+           command: |
+            . venv/bin/activate
+            pytest tests -p no:warnings
+        
+        
+  
   deploy:
     executor: heroku/default
-    parameters:
-      api-key:
-        default: HEROKU_API_KEY
-        description: The name of the environment variable containing your Heroku API Key.
-        type: env_var_name
-      app-name:
-        default: algorithm-library
-        description: The name of your Heroku App. 
-        type: string
     steps:
       - checkout
+      - run:
+          name: Storing previous commit
+          command: |
+            git rev-parse HEAD > ./commit.txt
       - heroku/install
+      - setup_remote_docker:
+          version: 18.06.0-ce
       - run:
-          name: Login into Heroku Docker Repository
-          command: 
+          name: Pushing to heroku registry
+          command: |
             heroku container:login
-      - run:
-          name: Deploy Heroku Docker Container
-          command: 
-            heroku container:push web -a algorithm-library
-            heroku container:release web -a algorithm-library
-    
-workflows:  
-  build-test-and-deploy:    
-    jobs:      
+            heroku container:push web --arg NODE_ENV=production -a $HEROKU_APP_NAME
+            heroku container:release web -a $HEROKU_APP_NAME
+      
+  
+workflows:
+  build-test-deploy:
+    jobs:
+      
       - build:
           filters:            
             branches:
@@ -64,15 +109,17 @@ workflows:
                 - main
       - test:
           requires:
-          - build
+            - build
           filters:            
             branches:
               only:
                 - main
+      
       - deploy:
           requires:
-          - test
+            - test
           filters:            
             branches:
               only:
                 - main
+      

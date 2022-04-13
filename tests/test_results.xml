@@ -1,0 +1,182 @@
+{
+  "reportversion": "1",
+  "toxversion": "3.24.5",
+  "platform": "win32",
+  "host": "AFE1901",
+  "commands": [
+    {
+      "command": [
+        "c:\\users\\cheng.tan\\anaconda3\\python.exe",
+        "setup.py",
+        "sdist",
+        "--formats=zip",
+        "--dist-dir",
+        ".tox\\dist"
+      ],
+      "output": "running sdist\nrunning egg_info\nwriting sample.egg-info\\PKG-INFO\nwriting dependency_links to sample.egg-info\\dependency_links.txt\nwriting top-level names to sample.egg-info\\top_level.txt\nreading manifest file 'sample.egg-info\\SOURCES.txt'\nwriting manifest file 'sample.egg-info\\SOURCES.txt'\nrunning check\nwarning: check: missing required meta-data: url\n\nwarning: check: missing meta-data: if 'author' supplied, 'author_email' must be supplied too\n\ncreating sample-0.1.0\ncreating sample-0.1.0\\app\ncreating sample-0.1.0\\app\\api\ncreating sample-0.1.0\\app\\api\\api_v1\ncreating sample-0.1.0\\app\\api\\api_v1\\endpoints\ncreating sample-0.1.0\\app\\api\\security\ncreating sample-0.1.0\\app\\db\ncreating sample-0.1.0\\app\\libs\ncreating sample-0.1.0\\app\\libs\\action_localization\ncreating sample-0.1.0\\app\\libs\\action_localization\\spatio_temporal_pytorch\ncreating sample-0.1.0\\app\\libs\\detection_tracking\ncreating sample-0.1.0\\app\\libs\\utils\ncreating sample-0.1.0\\app\\schemas\ncreating sample-0.1.0\\operationss\ncreating sample-0.1.0\\sample.egg-info\ncopying files to sample-0.1.0...\ncopying README.md -> sample-0.1.0\ncopying setup.py -> sample-0.1.0\ncopying app\\__init__.py -> sample-0.1.0\\app\ncopying app\\main.py -> sample-0.1.0\\app\ncopying app\\api\\__init__.py -> sample-0.1.0\\app\\api\ncopying app\\api\\deps.py -> sample-0.1.0\\app\\api\ncopying app\\api\\api_v1\\__init__.py -> sample-0.1.0\\app\\api\\api_v1\ncopying app\\api\\api_v1\\api.py -> sample-0.1.0\\app\\api\\api_v1\ncopying app\\api\\api_v1\\endpoints\\__init__.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\c3d_endpoints.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\deepsort_endpoints.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\denseNet_XGBoost_endpoint.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\rolling_average_endpoint.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\spatio_temporal_endpoint.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\two_stream_endpoints.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\api_v1\\endpoints\\yolov5_endpoints.py -> sample-0.1.0\\app\\api\\api_v1\\endpoints\ncopying app\\api\\security\\__init__.py -> sample-0.1.0\\app\\api\\security\ncopying app\\api\\security\\_security_secret.py -> sample-0.1.0\\app\\api\\security\ncopying app\\api\\security\\_sqlite_access.py -> sample-0.1.0\\app\\api\\security\ncopying app\\api\\security\\management_endpoints.py -> sample-0.1.0\\app\\api\\security\ncopying app\\api\\security\\security_api_key.py -> sample-0.1.0\\app\\api\\security\ncopying app\\db\\__init__.py -> sample-0.1.0\\app\\db\ncopying app\\db\\base.py -> sample-0.1.0\\app\\db\ncopying app\\db\\base_class.py -> sample-0.1.0\\app\\db\ncopying app\\db\\init_db.py -> sample-0.1.0\\app\\db\ncopying app\\db\\session.py -> sample-0.1.0\\app\\db\ncopying app\\libs\\__init__.py -> sample-0.1.0\\app\\libs\ncopying app\\libs\\action_localization\\__init__.py -> sample-0.1.0\\app\\libs\\action_localization\ncopying app\\libs\\action_localization\\c3d.py -> sample-0.1.0\\app\\libs\\action_localization\ncopying app\\libs\\action_localization\\denseNet_XGBoost.py -> sample-0.1.0\\app\\libs\\action_localization\ncopying app\\libs\\action_localization\\rolling_average.py -> sample-0.1.0\\app\\libs\\action_localization\ncopying app\\libs\\action_localization\\two_stream.py -> sample-0.1.0\\app\\libs\\action_localization\ncopying app\\libs\\action_localization\\spatio_temporal_pytorch\\__init__.py -> sample-0.1.0\\app\\libs\\action_localization\\spatio_temporal_pytorch\ncopying app\\libs\\action_localization\\spatio_temporal_pytorch\\spatio_temporal.py -> sample-0.1.0\\app\\libs\\action_localization\\spatio_temporal_pytorch\ncopying app\\libs\\detection_tracking\\__init__.py -> sample-0.1.0\\app\\libs\\detection_tracking\ncopying app\\libs\\utils\\__init__.py -> sample-0.1.0\\app\\libs\\utils\ncopying app\\libs\\utils\\general.py -> sample-0.1.0\\app\\libs\\utils\ncopying app\\schemas\\__init__.py -> sample-0.1.0\\app\\schemas\ncopying app\\schemas\\usage_logs.py -> sample-0.1.0\\app\\schemas\ncopying app\\schemas\\yolov5.py -> sample-0.1.0\\app\\schemas\ncopying operationss\\__init__.py -> sample-0.1.0\\operationss\ncopying operationss\\operations.py -> sample-0.1.0\\operationss\ncopying sample.egg-info\\PKG-INFO -> sample-0.1.0\\sample.egg-info\ncopying sample.egg-info\\SOURCES.txt -> sample-0.1.0\\sample.egg-info\ncopying sample.egg-info\\dependency_links.txt -> sample-0.1.0\\sample.egg-info\ncopying sample.egg-info\\top_level.txt -> sample-0.1.0\\sample.egg-info\nWriting sample-0.1.0\\setup.cfg\ncreating '.tox\\dist\\sample-0.1.0.zip' and adding 'sample-0.1.0' to it\nadding 'sample-0.1.0'\nadding 'sample-0.1.0\\app'\nadding 'sample-0.1.0\\operationss'\nadding 'sample-0.1.0\\sample.egg-info'\nadding 'sample-0.1.0\\PKG-INFO'\nadding 'sample-0.1.0\\README.md'\nadding 'sample-0.1.0\\setup.cfg'\nadding 'sample-0.1.0\\setup.py'\nadding 'sample-0.1.0\\app\\api'\nadding 'sample-0.1.0\\app\\db'\nadding 'sample-0.1.0\\app\\libs'\nadding 'sample-0.1.0\\app\\schemas'\nadding 'sample-0.1.0\\app\\main.py'\nadding 'sample-0.1.0\\app\\__init__.py'\nadding 'sample-0.1.0\\app\\api\\api_v1'\nadding 'sample-0.1.0\\app\\api\\security'\nadding 'sample-0.1.0\\app\\api\\deps.py'\nadding 'sample-0.1.0\\app\\api\\__init__.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints'\nadding 'sample-0.1.0\\app\\api\\api_v1\\api.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\__init__.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\c3d_endpoints.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\deepsort_endpoints.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\denseNet_XGBoost_endpoint.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\rolling_average_endpoint.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\spatio_temporal_endpoint.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\two_stream_endpoints.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\yolov5_endpoints.py'\nadding 'sample-0.1.0\\app\\api\\api_v1\\endpoints\\__init__.py'\nadding 'sample-0.1.0\\app\\api\\security\\management_endpoints.py'\nadding 'sample-0.1.0\\app\\api\\security\\security_api_key.py'\nadding 'sample-0.1.0\\app\\api\\security\\_security_secret.py'\nadding 'sample-0.1.0\\app\\api\\security\\_sqlite_access.py'\nadding 'sample-0.1.0\\app\\api\\security\\__init__.py'\nadding 'sample-0.1.0\\app\\db\\base.py'\nadding 'sample-0.1.0\\app\\db\\base_class.py'\nadding 'sample-0.1.0\\app\\db\\init_db.py'\nadding 'sample-0.1.0\\app\\db\\session.py'\nadding 'sample-0.1.0\\app\\db\\__init__.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization'\nadding 'sample-0.1.0\\app\\libs\\detection_tracking'\nadding 'sample-0.1.0\\app\\libs\\utils'\nadding 'sample-0.1.0\\app\\libs\\__init__.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\spatio_temporal_pytorch'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\c3d.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\denseNet_XGBoost.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\rolling_average.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\two_stream.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\__init__.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\spatio_temporal_pytorch\\spatio_temporal.py'\nadding 'sample-0.1.0\\app\\libs\\action_localization\\spatio_temporal_pytorch\\__init__.py'\nadding 'sample-0.1.0\\app\\libs\\detection_tracking\\__init__.py'\nadding 'sample-0.1.0\\app\\libs\\utils\\general.py'\nadding 'sample-0.1.0\\app\\libs\\utils\\__init__.py'\nadding 'sample-0.1.0\\app\\schemas\\usage_logs.py'\nadding 'sample-0.1.0\\app\\schemas\\yolov5.py'\nadding 'sample-0.1.0\\app\\schemas\\__init__.py'\nadding 'sample-0.1.0\\operationss\\operations.py'\nadding 'sample-0.1.0\\operationss\\__init__.py'\nadding 'sample-0.1.0\\sample.egg-info\\dependency_links.txt'\nadding 'sample-0.1.0\\sample.egg-info\\PKG-INFO'\nadding 'sample-0.1.0\\sample.egg-info\\SOURCES.txt'\nadding 'sample-0.1.0\\sample.egg-info\\top_level.txt'\nremoving 'sample-0.1.0' (and everything under it)\n",
+      "retcode": 0
+    }
+  ],
+  "testenvs": {
+    "env": {
+      "setup": [
+        {
+          "command": [
+            "D:\\algo\\algorithm-library-api\\.tox\\env\\Scripts\\pip.EXE",
+            "install",
+            "--no-deps",
+            "-U",
+            ".tox\\.tmp\\package\\1\\sample-0.1.0.zip"
+          ],
+          "output": "Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com\nProcessing d:\\algo\\algorithm-library-api\\.tox\\.tmp\\package\\1\\sample-0.1.0.zip\nBuilding wheels for collected packages: sample\n  Building wheel for sample (setup.py): started\n  Building wheel for sample (setup.py): finished with status 'done'\n  Created wheel for sample: filename=sample-0.1.0-py3-none-any.whl size=37894 sha256=6054e7cfe520754abc73c2c4768919585537298815f4a3d08a9a1740cbed26a0\n  Stored in directory: C:\\Users\\Cheng.Tan\\AppData\\Local\\Temp\\pip-ephem-wheel-cache-k3rkgfgl\\wheels\\a7\\4f\\40\\f1fbb127fc4e434f722de6aa8f60b360bb870730a33b0e375d\nSuccessfully built sample\nInstalling collected packages: sample\n  Attempting uninstall: sample\n    Found existing installation: sample 0.1.0\n    Not uninstalling sample at d:\\algo\\algorithm-library-api, outside environment D:\\algo\\algorithm-library-api\\.tox\\env\n    Can't uninstall 'sample'. No files were found to uninstall.\nSuccessfully installed sample-0.1.0\nWARNING: You are using pip version 20.2.3; however, version 22.0.4 is available.\nYou should consider upgrading via the 'D:\\algo\\algorithm-library-api\\.tox\\env\\Scripts\\python.exe -m pip install --upgrade pip' command.\n",
+          "retcode": 0
+        },
+        {
+          "command": [
+            "D:\\algo\\algorithm-library-api\\.tox\\env\\Scripts\\python.EXE",
+            "-m",
+            "pip",
+            "freeze"
+          ],
+          "output": "absl-py==1.0.0\naiofiles==0.5.0\naniso8601==7.0.0\nanyio==3.5.0\nastunparse==1.6.3\nasync-exit-stack==1.0.1\nasync-generator==1.10\natomicwrites==1.4.0\nattrs==21.4.0\ncachetools==5.0.0\ncertifi==2021.10.8\ncharset-normalizer==2.0.12\nclick==7.1.2\ncolorama==0.4.4\ncycler==0.11.0\ndnspython==2.2.1\neasydict==1.9\nemail-validator==1.1.3\nfastapi==0.68.0\nflatbuffers==1.12\nfonttools==4.31.2\ngast==0.3.3\ngoogle-auth==2.6.2\ngoogle-auth-oauthlib==0.4.6\ngoogle-pasta==0.2.0\ngraphene==2.1.9\ngraphql-core==2.3.2\ngraphql-relay==2.0.1\ngreenlet==1.1.2\ngrpcio==1.44.0\nh11==0.13.0\nh5py==2.10.0\nidna==3.3\nimportlib-metadata==4.11.3\nimutils==0.5.4\niniconfig==1.1.1\nitsdangerous==1.1.0\nJinja2==2.11.3\njoblib==1.1.0\nKeras-Preprocessing==1.1.2\nkiwisolver==1.4.1\nMarkdown==3.3.6\nMarkupSafe==2.1.1\nmatplotlib==3.5.1\nnumpy==1.22.3\noauthlib==3.2.0\nopencv-contrib-python==4.5.3.56\nopt-einsum==3.3.0\norjson==3.6.7\npackaging==21.3\npandas==1.4.1\nPillow==9.0.1\npluggy==1.0.0\npromise==2.3\nprotobuf==3.19.4\npy==1.11.0\npyasn1==0.4.8\npyasn1-modules==0.2.8\npydantic==1.9.0\npyparsing==3.0.7\npytest==7.1.1\npython-dateutil==2.8.2\npython-dotenv==0.20.0\npython-multipart==0.0.5\npytz==2022.1\nPyYAML==6.0\nrequests==2.27.1\nrequests-oauthlib==1.3.1\nrsa==4.8\nRx==1.6.1\nsample==0.1.0\nscikit-learn==1.0\nscipy==1.8.0\nseaborn==0.11.2\nsix==1.15.0\nsniffio==1.2.0\nSQLAlchemy==1.4.32\nstarlette==0.14.2\ntensorboard==2.8.0\ntensorboard-data-server==0.6.1\ntensorboard-plugin-wit==1.8.1\ntensorflow==2.4.0\ntensorflow-estimator==2.4.0\ntermcolor==1.1.0\nthop==0.0.31.post2005241907\nthreadpoolctl==3.1.0\ntomli==2.0.1\ntorch==1.11.0\ntorchaudio==0.11.0\ntorchvision==0.12.0\ntqdm==4.63.1\ntyping-extensions==3.7.4.3\nujson==4.3.0\nurllib3==1.26.9\nuvicorn==0.13.4\nwatchgod==0.8.1\nwebsockets==8.1\nWerkzeug==2.1.0\nwrapt==1.12.1\nxgboost==1.5.0\nzipp==3.7.0\n",
+          "retcode": 0
+        }
+      ],
+      "python": {
+        "executable": "D:\\algo\\algorithm-library-api\\.tox\\env\\Scripts\\python.EXE",
+        "implementation": "CPython",
+        "version_info": [
+          3,
+          8,
+          10,
+          "final",
+          0
+        ],
+        "version": "3.8.10 (default, May 19 2021, 13:12:57) [MSC v.1916 64 bit (AMD64)]",
+        "is_64": true,
+        "sysplatform": "win32",
+        "os_sep": "\\",
+        "extra_version_info": null
+      },
+      "installpkg": {
+        "sha256": "afe306d781a7b35c30053ed02759015bba00060f00e0fd0a740b2f248175b2be",
+        "basename": "sample-0.1.0.zip"
+      },
+      "installed_packages": [
+        "absl-py==1.0.0",
+        "aiofiles==0.5.0",
+        "aniso8601==7.0.0",
+        "anyio==3.5.0",
+        "astunparse==1.6.3",
+        "async-exit-stack==1.0.1",
+        "async-generator==1.10",
+        "atomicwrites==1.4.0",
+        "attrs==21.4.0",
+        "cachetools==5.0.0",
+        "certifi==2021.10.8",
+        "charset-normalizer==2.0.12",
+        "click==7.1.2",
+        "colorama==0.4.4",
+        "cycler==0.11.0",
+        "dnspython==2.2.1",
+        "easydict==1.9",
+        "email-validator==1.1.3",
+        "fastapi==0.68.0",
+        "flatbuffers==1.12",
+        "fonttools==4.31.2",
+        "gast==0.3.3",
+        "google-auth==2.6.2",
+        "google-auth-oauthlib==0.4.6",
+        "google-pasta==0.2.0",
+        "graphene==2.1.9",
+        "graphql-core==2.3.2",
+        "graphql-relay==2.0.1",
+        "greenlet==1.1.2",
+        "grpcio==1.44.0",
+        "h11==0.13.0",
+        "h5py==2.10.0",
+        "idna==3.3",
+        "importlib-metadata==4.11.3",
+        "imutils==0.5.4",
+        "iniconfig==1.1.1",
+        "itsdangerous==1.1.0",
+        "Jinja2==2.11.3",
+        "joblib==1.1.0",
+        "Keras-Preprocessing==1.1.2",
+        "kiwisolver==1.4.1",
+        "Markdown==3.3.6",
+        "MarkupSafe==2.1.1",
+        "matplotlib==3.5.1",
+        "numpy==1.22.3",
+        "oauthlib==3.2.0",
+        "opencv-contrib-python==4.5.3.56",
+        "opt-einsum==3.3.0",
+        "orjson==3.6.7",
+        "packaging==21.3",
+        "pandas==1.4.1",
+        "Pillow==9.0.1",
+        "pluggy==1.0.0",
+        "promise==2.3",
+        "protobuf==3.19.4",
+        "py==1.11.0",
+        "pyasn1==0.4.8",
+        "pyasn1-modules==0.2.8",
+        "pydantic==1.9.0",
+        "pyparsing==3.0.7",
+        "pytest==7.1.1",
+        "python-dateutil==2.8.2",
+        "python-dotenv==0.20.0",
+        "python-multipart==0.0.5",
+        "pytz==2022.1",
+        "PyYAML==6.0",
+        "requests==2.27.1",
+        "requests-oauthlib==1.3.1",
+        "rsa==4.8",
+        "Rx==1.6.1",
+        "sample==0.1.0",
+        "scikit-learn==1.0",
+        "scipy==1.8.0",
+        "seaborn==0.11.2",
+        "six==1.15.0",
+        "sniffio==1.2.0",
+        "SQLAlchemy==1.4.32",
+        "starlette==0.14.2",
+        "tensorboard==2.8.0",
+        "tensorboard-data-server==0.6.1",
+        "tensorboard-plugin-wit==1.8.1",
+        "tensorflow==2.4.0",
+        "tensorflow-estimator==2.4.0",
+        "termcolor==1.1.0",
+        "thop==0.0.31.post2005241907",
+        "threadpoolctl==3.1.0",
+        "tomli==2.0.1",
+        "torch==1.11.0",
+        "torchaudio==0.11.0",
+        "torchvision==0.12.0",
+        "tqdm==4.63.1",
+        "typing-extensions==3.7.4.3",
+        "ujson==4.3.0",
+        "urllib3==1.26.9",
+        "uvicorn==0.13.4",
+        "watchgod==0.8.1",
+        "websockets==8.1",
+        "Werkzeug==2.1.0",
+        "wrapt==1.12.1",
+        "xgboost==1.5.0",
+        "zipp==3.7.0"
+      ],
+      "test": [
+        {
+          "command": [
+            "D:\\algo\\algorithm-library-api\\.tox\\env\\Scripts\\pytest.EXE",
+            "tests",
+            "-p",
+            "no:warnings"
+          ],
+          "output": "============================= test session starts =============================\nplatform win32 -- Python 3.8.10, pytest-7.1.1, pluggy-1.0.0\ncachedir: .tox\\env\\.pytest_cache\nrootdir: D:\\algo\\algorithm-library-api\nplugins: anyio-3.5.0\ncollected 9 items\n\ntests\\test_operations.py ...                                             [ 33%]\ntests\\test_rolling_average_endpoint.py F.F                               [ 66%]\ntests\\test_yolov5_endpoints.py .FF                                       [100%]\n\n================================== FAILURES ===================================\n_____________________ test_rolling_average_upload_weights _____________________\n\n    def test_rolling_average_upload_weights():\n        url = \"/uploadweights/\"\n        filename=cur_path+'/model_weights/rolling_average/vgg_tf_vgg_test_77.hdf5'\n        filename_=\"vgg_tf_vgg_test_77.hdf5\"\n    \n>       up= {'file':(filename_, open(filename, 'rb'), 'application/octet-stream')}\nE       FileNotFoundError: [Errno 2] No such file or directory: 'D:/algo/algorithm-library-api/model_weights/rolling_average/vgg_tf_vgg_test_77.hdf5'\n\ntests\\test_rolling_average_endpoint.py:18: FileNotFoundError\n__________________ test_rolling_average_action_localization ___________________\n\n    def test_rolling_average_action_localization():\n        url = \"/actiondetection/\"\n        # ------------------ working ---------------\n        multiple_files_ =[\n>       ('files', ('UCSP_fill_1_cut_compressed_mod.mp4', open(cur_path+'/input/videos/UCSP_fill_1_cut_compressed_mod.mp4', 'rb'), 'video/mp4'))]\nE       FileNotFoundError: [Errno 2] No such file or directory: 'D:/algo/algorithm-library-api/input/videos/UCSP_fill_1_cut_compressed_mod.mp4'\n\ntests\\test_rolling_average_endpoint.py:38: FileNotFoundError\n_____________________________ test_upload_weights _____________________________\n\n    def test_upload_weights():\n        url = \"/uploadweights\"\n        filename=cur_path+'/model_weights/yolov5/yolov5s6.pt'\n        filename_=\"yolov5s6.pt\"\n    \n>       up= {'file':(filename_, open(filename, 'rb'), 'application/octet-stream')}\nE       FileNotFoundError: [Errno 2] No such file or directory: 'D:/algo/algorithm-library-api/model_weights/yolov5/yolov5s6.pt'\n\ntests\\test_yolov5_endpoints.py:30: FileNotFoundError\n_____________________________ test_yolov5_detect ______________________________\n\n    def test_yolov5_detect():\n        url = \"/detect\"\n        # ------------------ working ---------------\n        multiple_files_ =[\n        ('files', ('example1.png', open(cur_path+'/input/images/example1.png', 'rb'), 'image/png')),\n        ('files', ('example2.png', open(cur_path+'/input/images/example2.png', 'rb'), 'image/png'))]\n        # response=client.post(url,files=multiple_files_)\n        # ---------------------------------------------\n    \n        data={\n        \"weights\":\"yolov5s6\",\n        \"save_upload_to_file\":True}\n    \n    \n    \n>       response=client.post(url,params=data,files=multiple_files_)\n\ntests\\test_yolov5_endpoints.py:50: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n.tox\\env\\lib\\site-packages\\requests\\sessions.py:577: in post\n    return self.request('POST', url, data=data, json=json, **kwargs)\n.tox\\env\\lib\\site-packages\\starlette\\testclient.py:415: in request\n    return super().request(\n.tox\\env\\lib\\site-packages\\requests\\sessions.py:529: in request\n    resp = self.send(prep, **send_kwargs)\n.tox\\env\\lib\\site-packages\\requests\\sessions.py:645: in send\n    r = adapter.send(request, **kwargs)\n.tox\\env\\lib\\site-packages\\starlette\\testclient.py:243: in send\n    raise exc from None\n.tox\\env\\lib\\site-packages\\starlette\\testclient.py:240: in send\n    loop.run_until_complete(self.app(scope, receive, send))\nc:\\users\\cheng.tan\\anaconda3\\lib\\asyncio\\base_events.py:616: in run_until_complete\n    return future.result()\n.tox\\env\\lib\\site-packages\\starlette\\routing.py:580: in __call__\n    await route.handle(scope, receive, send)\n.tox\\env\\lib\\site-packages\\starlette\\routing.py:241: in handle\n    await self.app(scope, receive, send)\n.tox\\env\\lib\\site-packages\\starlette\\routing.py:52: in app\n    response = await func(request)\n.tox\\env\\lib\\site-packages\\fastapi\\routing.py:219: in app\n    raw_response = await run_endpoint_function(\n.tox\\env\\lib\\site-packages\\fastapi\\routing.py:154: in run_endpoint_function\n    return await run_in_threadpool(dependant.call, **values)\n.tox\\env\\lib\\site-packages\\starlette\\concurrency.py:40: in run_in_threadpool\n    return await loop.run_in_executor(None, func, *args)\nc:\\users\\cheng.tan\\anaconda3\\lib\\concurrent\\futures\\thread.py:57: in run\n    result = self.fn(*self.args, **self.kwargs)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nfiles = [<starlette.datastructures.UploadFile object at 0x000001F266A8F520>, <starlette.datastructures.UploadFile object at 0x000001F266A8F850>]\nweights = 'yolov5s6', save_upload_to_file = True, detection_format = 'xyxy'\n\n    @router.post(\n        \"/detect\",\n        response_model=schemas.Yolov5Response,\n        responses=schemas.yolov5_response_examples\n    )\n    def yolov5_detect(\n        files: List[UploadFile] = File(...),\n        weights: Optional[str] = \"yolov5s\",\n        save_upload_to_file: bool = False,\n        detection_format: Optional[str] = \"xyxy\"\n    ) -> Any:\n        \"\"\"\n        Get YOLOv5 detection result for image and video files.\n    \n        Args:\n            files (List[UploadFile]) : a list of .jpeg, .png, or .mp4 files\n            weights (str) : name of a YOLOv5 weights binary .pt file\n            save_upload_to_file (bool) : whether to save upload video to file or use from memory\n            detection_format (str) : the format detections are made, i.e. [\"xyxy\", \"xyxyn\", \"xywh\", \"xywhn\"]\n    \n        Returns:\n            JSON format:\n                model_weights: name of weights used\n                filenames: list of filenames uploaded\n                results_format: detection format selected\n                results: list of results\n                results_by_detection: list of results by detection\n        \"\"\"\n        if detection_format not in [\"xyxy\", \"xyxyn\", \"xywh\", \"xywhn\"]:\n            raise HTTPException(\n                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,\n                detail=\"detection_format must be 'xyxy', 'xyxyn', 'xywh', or 'xywhn'.\"\n            )\n    \n        # Set model params\n        model_path = f\"model_weights/yolov5/{weights}.pt\"\n        if not os.path.isfile(model_path):\n>           raise HTTPException(\n                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,\n                detail=\"Model weights not available.\"\n            )\nE           fastapi.exceptions.HTTPException\n\napp\\api\\api_v1\\endpoints\\yolov5_endpoints.py:100: HTTPException\n=========================== short test summary info ===========================\nFAILED tests/test_rolling_average_endpoint.py::test_rolling_average_upload_weights\nFAILED tests/test_rolling_average_endpoint.py::test_rolling_average_action_localization\nFAILED tests/test_yolov5_endpoints.py::test_upload_weights - FileNotFoundErro...\nFAILED tests/test_yolov5_endpoints.py::test_yolov5_detect - fastapi.exception...\n========================= 4 failed, 5 passed in 5.46s =========================\n",
+          "retcode": 1
+        }
+      ]
+    }
+  }
+}

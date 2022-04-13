@@ -1,0 +1,190 @@
+# Orb 'circleci/node@3.0.1' resolved to 'circleci/node@3.0.1'
+# Orb 'circleci/heroku@1.0.1' resolved to 'circleci/heroku@1.0.1'
+# Orb 'circleci/python@1.0.0' resolved to 'circleci/python@1.0.0'
+version: 2
+jobs:
+  build:
+    docker:
+    - image: cimg/python:3.8
+    steps:
+    - checkout
+    - run:
+        name: Setup Virtual env
+        command: python3 -m venv env .\env\Scripts\activate
+    - run:
+        name: Install Dependencies
+        command: pip install -r requirements.txt
+    - setup_remote_docker:
+        version: 18.06.0-ce
+    - run:
+        name: Build Docker image
+        command: |
+          docker build -t heroku-dockerize:circleci .
+          docker images
+  test:
+    docker:
+    - image: python:3.8
+    steps:
+    - checkout
+    - run:
+        command: ./env/Scripts/activate pytest --junitxml=./tests/test_results.xml tests
+    - store_test_results:
+        path: ./tests/test_results.xml
+  deploy:
+    docker:
+    - image: cimg/base:stable
+    steps:
+    - checkout
+    - run:
+        name: Storing previous commit
+        command: |
+          git rev-parse HEAD > ./commit.txt
+    - run:
+        command: |
+          if [[ $(command -v heroku) == "" ]]; then
+            curl https://cli-assets.heroku.com/install.sh | sh
+          else
+            echo "Heroku is already installed. No operation was performed."
+          fi
+        name: Install Heroku CLI (If not installed)
+    - setup_remote_docker:
+        version: 18.06.0-ce
+    - run:
+        name: Pushing to heroku registry
+        command: |
+          heroku container:login
+          heroku container:push web --arg NODE_ENV=production -a $HEROKU_APP_NAME
+          heroku container:release web -a $HEROKU_APP_NAME
+workflows:
+  build-test-deploy:
+    jobs:
+    - build:
+        filters:
+          branches:
+            only:
+            - main
+    - test:
+        filters:
+          branches:
+            only:
+            - main
+        requires:
+        - build
+    - deploy:
+        filters:
+          branches:
+            only:
+            - main
+        requires:
+        - test
+  version: 2
+
+# Original config.yml file:
+# version: 2.1
+# orbs:
+#   node: circleci/node@3.0.1
+#   heroku: circleci/heroku@1.0.1
+#   python: circleci/python@1.0.0
+# jobs:
+#   build-and-test:
+#     executor: 
+#       name: python/default
+#       tag: '3.8'
+#     steps:
+#       - checkout
+#       - run:
+#           name: Setup Virtual env
+#           command:
+#             python3 -m venv env           
+#             .\\env\\Scripts\\activate 
+#       - run:
+#           name: Install Dependencies
+#           command: pip install -r requirements.txt
+#       - setup_remote_docker:
+#           version: 18.06.0-ce
+#       - run:
+#           name: Build Docker image
+#           command: |
+#             docker build -t heroku-dockerize:circleci .
+#             docker images
+#   
+#   build:
+#     executor: 
+#       name: python/default
+#       tag: '3.8'
+#     steps:
+#       - checkout
+#       - run:
+#           name: Setup Virtual env
+#           command:
+#             python3 -m venv env           
+#             .\\env\\Scripts\\activate 
+#       - run:
+#           name: Install Dependencies
+#           command: pip install -r requirements.txt
+#       - setup_remote_docker:
+#           version: 18.06.0-ce
+#       - run:
+#           name: Build Docker image
+#           command: |
+#             docker build -t heroku-dockerize:circleci .
+#             docker images
+#   test:
+#       
+#       docker:
+#         - image: python:3.8
+#       steps: 
+#         - checkout
+#     
+#         - run:
+#            command:
+#               ./env/Scripts/activate 
+#               pytest --junitxml=./tests/test_results.xml tests
+#         
+#         - store_test_results:
+#             path: ./tests/test_results.xml
+#   
+#   deploy:
+#     executor: heroku/default
+#     steps:
+#       - checkout
+#       - run:
+#           name: Storing previous commit
+#           command: |
+#             git rev-parse HEAD > ./commit.txt
+#       - heroku/install
+#       - setup_remote_docker:
+#           version: 18.06.0-ce
+#       - run:
+#           name: Pushing to heroku registry
+#           command: |
+#             heroku container:login
+#             heroku container:push web --arg NODE_ENV=production -a $HEROKU_APP_NAME
+#             heroku container:release web -a $HEROKU_APP_NAME
+#       
+#   
+# workflows:
+#   build-test-deploy:
+#     jobs:
+#       
+#       - build:
+#           filters:            
+#             branches:
+#               only:
+#                 - main
+#       - test:
+#           requires:
+#             - build
+#           filters:            
+#             branches:
+#               only:
+#                 - main
+#       
+#       - deploy:
+#           requires:
+#             - test
+#           filters:            
+#             branches:
+#               only:
+#                 - main
+#       

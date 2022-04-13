@@ -18,8 +18,3 @@ api_router.include_router(rolling_average_endpoint.router, prefix="/rollavg", ta
 api_router.include_router(denseNet_XGBoost_endpoint.router, prefix="/denenetXgboost", tags=["DenseNet XGBoost"])
 api_router.include_router(two_stream_endpoints.router, prefix="/two_stream", tags=["Two Stream"])
 api_router.include_router(spatio_temporal_endpoint.router, prefix="/spatio_temporal", tags=["Spatio Temporal"])
-
-# from app.api.api_v1.endpoints import (yolov5_endpoints)
-# api_router = APIRouter()
-# api_router.include_router(yolov5_endpoints.router, prefix="/yolov5", tags=["YOLOv5"])
-

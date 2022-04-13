@@ -15,10 +15,15 @@ fastapi[all]==0.68.0
 uvicorn[standard]==0.13.4
 sqlalchemy
 
-## CPU versions of PyTorch
-torch==1.9.0
-torchvision==0.10.0
-torchaudio==0.9.0
+## if using NVIDIA gpu with CUDA
+# pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio===0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+## below works in python3.9, but didn't work in python3.8, need to install them seperately from requirements.txt, like above
+# torch==1.9.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+# torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+## else
+# torch==1.9.0
+# torchvision==0.10.0
+
 
 #################################################
 # Detection and Tracking
@@ -70,3 +75,15 @@ tensorflow==2.4.0
 
 ## Densenet XGBoost -----------------------------
 xgboost==1.5.0
+
+## testing-------------
+pytest
+tox
+coverage
+
+
+--find-links https://download.pytorch.org/whl/cu113
+torch==1.9.1
+torchvision==0.10.1 
+torchaudio 
+

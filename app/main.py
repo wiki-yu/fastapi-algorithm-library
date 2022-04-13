@@ -1,17 +1,23 @@
 import os
 import sys
+if sys.platform == "win32":
+    os.system('color')  # enable ANSI terminal colors on Windows platforms
 
-from fastapi import FastAPI, APIRouter, Request, Depends
+from dotenv import load_dotenv
+load_dotenv("./.env")
+
+from fastapi import FastAPI, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from typing import Any
 
 # Setup database
-# from app.db.init_db import init_db
-# init_db()
+from app.db.init_db import init_db
+init_db()
 
 from app.api.api_v1.api import api_router
-# from app.api import security
+from app.api import security
+
 
 # Start app
 app = FastAPI(
@@ -20,9 +26,13 @@ app = FastAPI(
     version="0.1.0"
 )
 
-root_router = APIRouter()
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+]
 
-@root_router.get("/")
+
+@app.get("/")
 def index(request: Request) -> Any:
     """Basic HTML response."""
     body = (
@@ -39,11 +49,6 @@ def index(request: Request) -> Any:
     return HTMLResponse(content=body)
 
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -55,13 +60,11 @@ app.add_middleware(
 app.include_router(
     api_router,
     prefix="/api",
-    # dependencies=[Depends(security.api_key_security)]
+    dependencies=[Depends(security.api_key_security)]
 )
 
-# app.include_router(
-#     security.api_management_router,
-#     prefix="/auth",
-#     tags=["_management_auth"]
-# )
-
-app.include_router(root_router)
+app.include_router(
+    security.api_management_router,
+    prefix="/auth",
+    tags=["_management_auth"]
+)
